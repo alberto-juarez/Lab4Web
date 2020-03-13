@@ -1,33 +1,65 @@
 var input =  "";
 var result = 0;
 
-document.getElementById("addButton").addEventListener('click',function(){ operacion(1);});
-document.getElementById("substractButton").addEventListener('click',function(){ operacion(2);});
-document.getElementById("multiplicationButton").addEventListener('click',function(){ operacion(3);});
-document.getElementById("divisionButton").addEventListener('click',function(){ operacion(4);});
+document.getElementById("addButton").addEventListener('click', operador("+"));
+document.getElementById("substractButton").addEventListener('click', operacion("-"));
+document.getElementById("multiplicationButton").addEventListener('click',operacion("*"));
+document.getElementById("divisionButton").addEventListener('click',operacion("/"));
 
+// function add(){
+//   var num = document.getElementsByClassName("inputNumber")[0].value;
+//   input += num + ' + ';
+//   document.getElementsByClassName("inputNumber")[0].value = "";
+//
+// }
+//
+// function substract(){
+//   var num = document.getElementsByClassName("inputNumber")[0].value;
+//   input += num + ' - ';
+//   document.getElementsByClassName("inputNumber")[0].value = "";
+//
+// }
+//
+//
+// function multiply(){
+//   var num = document.getElementsByClassName("inputNumber")[0].value;
+//   input += num + ' * ';
+//   document.getElementsByClassName("inputNumber")[0].value = "";
+//
+// }
+//
+// function divide(){
+//   var num = document.getElementsByClassName("inputNumber")[0].value;
+//   input += num + ' / ';
+//   document.getElementsByClassName("inputNumber")[0].value = "";
+//
+// }
 
 function operacion(x){
       var num = document.getElementsByClassName("inputNumber")[0].value;
       switch(x){
-        case 1:
+        case "+":
             input += num + ' + ';
+            console.log(input);
         break;
 
-        case 2:
+        case "-":
             input += num + ' - ';
+            console.log(input);
         break;
 
-        case 3:
+        case "*":
             input += num + ' * ';
+            console.log(input);
         break;
 
-        case 4:
+        case "/":
             input += num + ' / ';
         break;
       }
 
       document.getElementsByClassName("inputNumber")[0].value = "";
+      console.log(input);
 }
 
 document.getElementsByClassName("resetButton")[0].addEventListener('click', (event) =>{
